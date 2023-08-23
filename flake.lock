@@ -7,16 +7,36 @@
         ]
       },
       "locked": {
-        "lastModified": 1692809563,
-        "narHash": "sha256-10pcy3OS36kjpePhRrCsIvEw4URP9Nq3wkBCH103Qo8=",
+        "lastModified": 1692824369,
+        "narHash": "sha256-P2C9NGIGk7xDzUXYlXXEEldgO/GoUUi2kf/+dInyei8=",
         "owner": "thesola10",
         "repo": "aasdk",
-        "rev": "c9878570a1b3aa4e5df5edf2439053b436dc11ff",
+        "rev": "e0df01eb4ded191db9b8ba710baacf719cd67e59",
         "type": "github"
       },
       "original": {
         "owner": "thesola10",
         "repo": "aasdk",
+        "type": "github"
+      }
+    },
+    "h264bitstream": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1692823528,
+        "narHash": "sha256-N0tX9BwgsO5JNvWdgo29lFvIg7oCV694p5xtXAiOGdw=",
+        "owner": "thesola10",
+        "repo": "h264bitstream",
+        "rev": "d0ad3003cf4feffda1922859bb2f56815f1dd017",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thesola10",
+        "repo": "h264bitstream",
         "type": "github"
       }
     },
@@ -39,6 +59,7 @@
     "root": {
       "inputs": {
         "aasdk": "aasdk",
+        "h264bitstream": "h264bitstream",
         "nixpkgs": "nixpkgs"
       }
     }

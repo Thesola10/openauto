@@ -1,4 +1,4 @@
-{ pkgs, stdenv, aasdk }:
+{ pkgs, stdenv, aasdk, h264bitstream }:
 
 stdenv.mkDerivation {
   name = "openauto";
@@ -9,16 +9,18 @@ stdenv.mkDerivation {
     git
     chrpath
     qt5.wrapQtAppsHook
+    pkgconfig
   ];
 
   cmakeFlags =
     let ext = stdenv.targetPlatform.extensions.library;
     in
-    [ "-DRPI3_BUILD=FALSE"
+    [ "-DRPI_BUILD=FALSE"
       "-DAASDK_INCLUDE_DIR=${aasdk}/include"
       "-DAASDK_PROTO_INCLUDE_DIR=${aasdk}/include"
       "-DAASDK_LIBRARIES=${aasdk}/lib/libaasdk${ext}"
       "-DAASDK_PROTO_LIBRARIES=${aasdk}/lib/libaasdk_proto${ext}"
+      "-DCMAKE_SKIP_RPATH=TRUE"
     ];
 
   buildInputs = with pkgs;
@@ -28,5 +30,6 @@ stdenv.mkDerivation {
     qt5.qtmultimedia
     qt5.qtbase
     rtaudio
+    h264bitstream
   ];
 }
